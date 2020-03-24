@@ -4,21 +4,11 @@ import java.util.*;
 
 public class Varasto implements VarastoIf {
 
-    private static Varasto instanssi;
-
-    public static Varasto getInstance() {
-        if (instanssi == null) {
-            instanssi = new Varasto();
-        }
-
-        return instanssi;
-    }
-    
-    private Kirjanpito kirjanpito;
+    private KirjanpitoIf kirjanpito;
     private HashMap<Tuote, Integer> saldot;  
     
-    private Varasto() {
-        kirjanpito = Kirjanpito.getInstance();
+    public Varasto(KirjanpitoIf kirjanpito) {
+        this.kirjanpito = kirjanpito;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
