@@ -9,3 +9,5 @@ uusi26962;salasana123
 uusi58596;salasana123
 uusi74057;salasana123
 uusi88230;salasana123
+uusi64507;salasana123
+uusitesti;qwerty123
