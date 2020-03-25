@@ -40,6 +40,15 @@ public class AuthenticationService {
 
     private boolean invalid(String username, String password) {
         // validity check of username and password
+        boolean onlyLowerLetters = username.matches("[a-z]+");
+        boolean rightLenghtUser = username.length() >= 3;
+
+        boolean rightLengtPass = password.length() >= 8;
+        boolean onlyLetters = password.matches("[a-zA-Z]+");
+
+        if (!rightLenghtUser || !onlyLowerLetters || !rightLengtPass || onlyLetters) {
+            return true;
+        }
 
         return false;
     }
