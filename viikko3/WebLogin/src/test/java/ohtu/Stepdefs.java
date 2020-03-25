@@ -96,6 +96,44 @@ public class Stepdefs {
         pageHasContent("password and password confirmation do not match");
     }
 
+    @Given("user with username {string} with password {string} is successfully created")
+    public void userIsSuccessfullyCreated(String username, String password) {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));
+        element.click();
+        createUserWith(username, password, password);
+        logout();
+    }
+
+    @When("successfully created user tries to login with username {string} and password {string}")
+    public void previouslyCreatedUserEntersLoginInformation(String username, String password) {
+        logInWith(username, password);
+    }
+
+    @Then("user logs in")
+    public void createdUserLogsIn() {
+        pageHasContent("Ohtu Application main page");
+    }
+
+    @Given("user with username {string} and password {string} is tried to be created")
+    public void userCreationIsTried(String username, String password) {
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.linkText("register new user"));
+        element.click();
+        createUserWith(username, password, password);
+        element = driver.findElement(By.linkText("back to home"));
+        element.click();
+    }
+
+    @When("unsuccessfully created user tries to login with username {string} and password {string}")
+    public void userTriesToLoginUnsuccesfully(String username, String password) {
+        logInWith(username, password);
+    }
+
+    @Then("user is not logged in and error \"invalid username or password\" is reported")
+    public void loginFails() {
+        pageHasContent("invalid username or password");
+    }
 
     @After
     public void tearDown(){
@@ -116,7 +154,13 @@ public class Stepdefs {
         element.submit();
     }
 
- 
+    private void logout() {
+        WebElement element = driver.findElement((By.linkText("continue to application mainpage")));
+        element.click();
+        element = driver.findElement(By.linkText("logout"));
+        element.click();
+    }
+
     private void pageHasContent(String content) {
         assertTrue(driver.getPageSource().contains(content));
     }
