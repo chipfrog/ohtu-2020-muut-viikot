@@ -131,7 +131,7 @@ public class KauppaTest {
         kauppa.maksa("1111");
 
         // varmistetaan, että nyt käytössä ensimmäisenä pyydetty viite
-        verify(mockPankki).maksa(anyString(), anyInt(), eq(1));
+        verify(mockPankki).maksa(anyString(), anyInt(), eq(5));
         
         kauppa.aloitaOstokset();
         kauppa.lisaaOstos(1);
