@@ -2,79 +2,118 @@ package ohtu;
 
 public class TennisGame {
     
-    private int m_score1 = 0;
-    private int m_score2 = 0;
+    private int player1Score = 0;
+    private int player2Score = 0;
     private String player1Name;
     private String player2Name;
+    private String scoreOutput = "";
 
     public TennisGame(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
     }
+    public String getScore() {
+
+        if (playersHaveEqualScore()) {
+            setScoreOutputToEven();
+        }
+        else if (bothPlayersHaveAtLeast4Points()) {
+            setScoreOutputToAdvantageOrWin();
+        }
+        else {
+            setScoreOutputToUneven();
+        }
+        return scoreOutput;
+    }
 
     public void wonPoint(String playerName) {
         if (playerName == "player1")
-            m_score1 += 1;
+            player1Score += 1;
         else
-            m_score2 += 1;
+            player2Score += 1;
+    }
+    private boolean bothPlayersHaveAtLeast4Points() {
+        if (player1Score >=4 || player2Score >=4) {
+            return true;
+        }
+        return false;
+    }
+    private boolean playersHaveEqualScore() {
+        if (player1Score == player2Score) {
+            return true;
+        }
+        return false;
     }
 
-    public String getScore() {
-        String score = "";
-        int tempScore=0;
-        if (m_score1==m_score2)
-        {
-            switch (m_score1)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-                case 3:
-                        score = "Forty-All";
-                    break;
-                default:
-                        score = "Deuce";
-                    break;
-                
-            }
+    private void setScoreOutputToAdvantageOrWin() {
+        int scoreDifference = player1Score - player2Score;
+        if (scoreDifference==1) {
+            scoreOutput ="Advantage player1";
         }
-        else if (m_score1>=4 || m_score2>=4)
-        {
-            int minusResult = m_score1-m_score2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
+        else if (scoreDifference ==-1) {
+            scoreOutput ="Advantage player2";
         }
-        else
-        {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) tempScore = m_score1;
-                else { score+="-"; tempScore = m_score2;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
-            }
+        else if (scoreDifference>=2) {
+            scoreOutput = "Win for player1";
         }
-        return score;
+        else {
+            scoreOutput ="Win for player2";
+        }
     }
+
+    private void setScoreOutputToEven() {
+        switch (player1Score) {
+            case 0:
+                scoreOutput = "Love-All";
+                break;
+            case 1:
+                scoreOutput = "Fifteen-All";
+                break;
+            case 2:
+                scoreOutput = "Thirty-All";
+                break;
+            case 3:
+                scoreOutput = "Forty-All";
+                break;
+            default:
+                scoreOutput = "Deuce";
+                break;
+        }
+    }
+
+    private void setScoreOutputToUneven() {
+        switch(player1Score)
+        {
+            case 0:
+                scoreOutput+="Love";
+                break;
+            case 1:
+                scoreOutput+="Fifteen";
+                break;
+            case 2:
+                scoreOutput+="Thirty";
+                break;
+            case 3:
+                scoreOutput+="Forty";
+                break;
+        }
+
+        switch(player2Score)
+        {
+            case 0:
+                scoreOutput+="-Love";
+                break;
+            case 1:
+                scoreOutput+="-Fifteen";
+                break;
+            case 2:
+                scoreOutput+="-Thirty";
+                break;
+            case 3:
+                scoreOutput+="-Forty";
+                break;
+        }
+
+    }
+
 }
