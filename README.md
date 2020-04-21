@@ -22,3 +22,16 @@ Tehtävät 7-8 brancheissa haara1 ja haara2
 [Tehtävät 5-6](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko3/LoginCucumber)
 
 [Tehtävät 7-11](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko3/WebLogin)
+
+## Viikko 4
+
+[Tehtävä 1](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko4/MockitoDemo)
+
+[Tehtävät 2](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko4/MaksukorttiMockito)
+
+[Tehtävät 3-4](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko4/Verkkokauppa)
+
+[Tehtävä 5](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko4/IntJoukkoSovellus)
+
+[Tehtävä 6](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko4/Tennis)
+
