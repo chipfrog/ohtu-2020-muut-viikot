@@ -29,10 +29,24 @@ public class Tapahtumankuuntelija implements EventHandler {
         if (event.getTarget() != undo) {
             Komento komento = komennot.get((Button)event.getTarget());
             komento.suorita();
+            updateNumbers(komento);
             edellinen = komento;
         } else {
             edellinen.peru();
             edellinen = null;
+        }
+    }
+
+    public void updateNumbers(Komento k) {
+        k.syotekentta.setText("");
+        k.tuloskentta.setText("" + sovellus.tulos());
+        naytaNollausNappi(k);
+    }
+    public void naytaNollausNappi(Komento k) {
+        if ( sovellus.tulos() == 0) {
+            k.nollaa.disableProperty().set(true);
+        } else {
+            k.nollaa.disableProperty().set(false);
         }
     }
 }

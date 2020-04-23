@@ -12,9 +12,6 @@ public class Erotus extends Komento{
         try {
             int arvo = Integer.parseInt(syotekentta.getText());
             sovellus.miinus(arvo);
-            syotekentta.setText("");
-            tuloskentta.setText("" + sovellus.tulos());
-            naytaNollausNappi();
         } catch (Exception e) {
         }
     }

@@ -22,11 +22,4 @@ public abstract class Komento {
 
     public abstract void peru();
 
-    public void naytaNollausNappi() {
-        if ( sovellus.tulos() == 0) {
-            nollaa.disableProperty().set(true);
-        } else {
-            nollaa.disableProperty().set(false);
-        }
-    }
 }
