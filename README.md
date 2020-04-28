@@ -45,5 +45,9 @@ Tehtävät 2-3: tehty paikallisesti
 
 [Tehtävä 6](https://github.com/chipfrog/ohtu-2020-muut-viikot/blob/master/retro.md)
 
+## Viikko 6
 
+Tehtävä 1: tehty paikallisesti
+
+[Tehtävät 2-5](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko6/QueryLanguage)
 
