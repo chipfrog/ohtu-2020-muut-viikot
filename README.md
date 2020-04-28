@@ -35,3 +35,15 @@ Tehtävät 7-8 brancheissa haara1 ja haara2
 
 [Tehtävä 6](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko4/Tennis)
 
+## Viikko 5
+
+Tehtävä 1: tagit
+
+Tehtävät 2-3: tehty paikallisesti
+
+[Tehtävät 4-5](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko5/LaskinFX8)
+
+[Tehtävä 6](https://github.com/chipfrog/ohtu-2020-muut-viikot/blob/master/retro.md)
+
+
+
