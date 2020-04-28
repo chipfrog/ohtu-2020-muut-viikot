@@ -11,10 +11,24 @@ public class Main {
 
         Statistics stats = new Statistics(new PlayerReaderImpl(url));
 
-        QueryBuilder query = new QueryBuilder();
+        /*QueryBuilder query = new QueryBuilder();
+
         Matcher m = query.playsIn("NYR")
                 .hasAtLeast(5, "goals")
-                .hasFewerThan(10, "goals").build();
+                .hasFewerThan(10, "goals").build();*/
+
+        QueryBuilder q1 = new QueryBuilder();
+        QueryBuilder q2 = new QueryBuilder();
+        QueryBuilder q3 = new QueryBuilder();
+
+        Matcher m1 = q1.playsIn("PHI")
+                .hasAtLeast(10, "assists")
+                .hasFewerThan(8, "goals").build();
+
+        Matcher m2 = q2.playsIn("EDM")
+                .hasAtLeast(20, "points").build();
+
+        Matcher m = q3.oneOf(m1, m2).build();
 
         for (Player player : stats.matches(m)) {
             System.out.println(player);

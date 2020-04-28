@@ -1,7 +1,5 @@
 package statistics.matcher;
 
-import statistics.Player;
-
 public class QueryBuilder {
 
     private Matcher matcher;
@@ -26,6 +24,11 @@ public class QueryBuilder {
 
     public QueryBuilder playsIn(String team) {
         this.matcher = new And(new PlaysIn(team), matcher);
+        return this;
+    }
+
+    public QueryBuilder oneOf(Matcher...matchers) {
+        this.matcher = new Or(matchers);
         return this;
     }
 
