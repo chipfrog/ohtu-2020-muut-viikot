@@ -51,3 +51,9 @@ Tehtävä 1: tehty paikallisesti
 
 [Tehtävät 2-5](https://github.com/chipfrog/ohtu-2020-muut-viikot/tree/master/viikko6/QueryLanguage)
 
+## Viikko 7
+
+Tehtävät 1-2: tehty paikallisesti
+
+Tehtävä 5: Palaute annettu
+
